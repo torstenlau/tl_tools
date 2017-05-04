@@ -209,7 +209,6 @@ def sliceloader(filepath_and_name,slice_no,slice_size,dtype='float32'):
         f=open(filepath_and_name,'r')
         f.seek(slice_no*np.prod(slice_size)*4)
         load_slice=f.read(np.prod(slice_size)*4)
-        print len(load_slice)
         load_slice=float_from_string(load_slice)
         load_slice.shape=slice_size
     return load_slice
